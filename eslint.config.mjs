@@ -8,10 +8,11 @@ export default [
     // This applies the recommended rules for modern JavaScript.
     js.configs.recommended,
 
-    // 2. Environment Globals and Custom Rules
-    // This defines global variables for a browser environment and custom rules.
     {
         files: ["**/*.{js,mjs,cjs}"],
+
+        // 2. Environment Globals and Custom Rules
+        // This defines global variables for a browser environment and custom rules.
         languageOptions: {
             globals: {
                 ...globals.browser,
@@ -23,10 +24,24 @@ export default [
             "no-unused-vars": "warn", // Warn about unused variables
             "no-console": "off", // Allow console statements
             "no-undef": "error", // Disallow undefined variables
+            "prettier/prettier": [
+                "error",
+                {
+                    endOfLine: "auto",
+                },
+            ],
+        },
+
+        // 4. Environment Configuration
+        // This sets the environment to support ES2021 and Node.js.
+
+        env: {
+            es2021: true,
+            node: true,
         },
     },
 
-    // 4. Prettier Integration
+    // 5. Prettier Integration
     // This config MUST be the last item in the array.
     // It enables the Prettier plugin and automatically disables all
     // ESLint rules that might conflict with Prettier's formatting.
