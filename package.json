@@ -4,7 +4,10 @@
     "description": "An industry level backend project for subscriptions",
     "main": "src/server.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
     },
     "keywords": [
         "backend",

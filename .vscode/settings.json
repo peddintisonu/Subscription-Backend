@@ -1,4 +1,16 @@
 {
+  // Sets Prettier as the default formatter for all supported languages
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Automatically formats the code on save using the default formatter (Prettier)
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+
+  // Enables ESLint to automatically fix problems on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // Specifies which file types should be formatted by Prettier
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.enableDebugLogs": true
 }
